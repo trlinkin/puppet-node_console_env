@@ -1,4 +1,4 @@
-require './console'
+require 'puppet/indirector/node/console'
 
 class Puppet::Node::Node_console_env < Puppet::Node::Console
 
