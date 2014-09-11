@@ -1,4 +1,10 @@
-require 'puppet/indirector/node/console'
+begin
+  # Try to require from the libdir
+  require 'puppet/indirector/node/console'
+rescue LoadError
+  # Fallback to loading from internal modules
+  require '/opt/puppet/share/puppet/modules/puppet_enterprise/lib/puppet/indirector/node/console'
+end
 
 class Puppet::Node::Node_console_env < Puppet::Node::Console
 
